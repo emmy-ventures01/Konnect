@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konnect</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDKs -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body>
+
+  <!-- ========================= WELCOME / SPLASH SCREEN ========================= -->
+  <div id="welcome-screen" class="screen active">
+    <img src="https://i.postimg.cc/8kWxrg47/Sleek-Gradient-Blue-Konnect-Logo.png" alt="Konnect Logo" class="logo">
+    <h1>Konnect</h1>
+    <p class="tagline">Developed by EmmyVentures</p>
+  </div>
+
+  <!-- ========================= PHONE LOGIN SCREEN ========================= -->
+  <div id="phone-screen" class="screen">
+    <h2>Enter your phone number</h2>
+    <input type="text" id="phone-number" placeholder="+2348012345678">
+    <button id="send-otp">Send OTP</button>
+    
+    <div id="otp-section" class="hidden">
+      <input type="text" id="otp-code" placeholder="Enter OTP">
+      <button id="verify-otp">Verify OTP</button>
+    </div>
+  </div>
+
+  <!-- ========================= PROFILE SETUP SCREEN ========================= -->
+  <div id="profile-screen" class="screen">
+    <h2>Set up your profile</h2>
+    <input type="text" id="username" placeholder="Enter username">
+    <input type="file" id="profile-pic" accept="image/*">
+    <button id="save-profile">Save Profile</button>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
