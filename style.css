@@ -1,0 +1,84 @@
+/* ===== GLOBAL STYLING ===== */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #ffffff;
+  color: #333;
+}
+
+.screen {
+  display: none;
+  height: 100vh;
+  width: 100vw;
+  text-align: center;
+  padding: 20px;
+  box-sizing: border-box;
+}
+
+.screen.active {
+  display: block;
+}
+
+/* ===== WELCOME SCREEN ===== */
+#welcome-screen {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffffff;
+}
+
+.logo {
+  width: 150px;
+  height: 150px;
+  margin-bottom: 20px;
+}
+
+h1 {
+  color: #007BFF;
+  font-size: 36px;
+  margin: 0;
+}
+
+.tagline {
+  color: #555;
+  font-size: 16px;
+  margin-top: 10px;
+}
+
+/* ===== PHONE LOGIN ===== */
+#phone-screen h2,
+#profile-screen h2 {
+  color: #007BFF;
+  margin-bottom: 20px;
+}
+
+input[type="text"],
+input[type="file"] {
+  width: 80%;
+  padding: 10px;
+  margin: 10px 0;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 8px;
+}
+
+button {
+  padding: 12px 20px;
+  background-color: #007BFF;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-top: 10px;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+/* ===== HIDE ELEMENTS ===== */
+.hidden {
+  display: none;
+}
