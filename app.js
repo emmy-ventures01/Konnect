@@ -15,10 +15,12 @@ const db = firebase.firestore();
 
 // =================== SCREEN ELEMENTS ===================
 const welcomeScreen = document.getElementById("welcome-screen");
+const onboardingScreen = document.getElementById("onboarding-screen");
 const phoneScreen = document.getElementById("phone-screen");
 const profileScreen = document.getElementById("profile-screen");
 const otpSection = document.getElementById("otp-section");
 
+const continueBtn = document.getElementById("continue-to-phone");
 const phoneInput = document.getElementById("phone-number");
 const sendOtpBtn = document.getElementById("send-otp");
 const otpInput = document.getElementById("otp-code");
@@ -28,11 +30,36 @@ const usernameInput = document.getElementById("username");
 const profilePicInput = document.getElementById("profile-pic");
 const saveProfileBtn = document.getElementById("save-profile");
 
-// =================== WELCOME SCREEN TRANSITION ===================
+// =================== SCREEN FLOW ===================
+
+// 1️⃣ Welcome screen → 2 seconds → onboarding
 setTimeout(() => {
   welcomeScreen.classList.remove("active");
+  onboardingScreen.classList.add("active");
+}, 2000);
+
+// 2️⃣ Onboarding → Continue button → phone screen
+continueBtn.addEventListener("click", () => {
+  onboardingScreen.classList.remove("active");
   phoneScreen.classList.add("active");
-}, 2000); // show welcome for 2 seconds
+});
+
+// 3️⃣ Persistent login check
+auth.onAuthStateChanged((user) => {
+  if (user) {
+    // User already logged in, check if profile exists
+    db.collection("users").doc(user.uid).get().then((doc) => {
+      if (doc.exists) {
+        alert(`Welcome back, ${doc.data().username}!`);
+        // Redirect to main chat screen here
+      } else {
+        // Show profile setup if not done yet
+        phoneScreen.classList.remove("active");
+        profileScreen.classList.add("active");
+      }
+    });
+  }
+});
 
 // =================== PHONE AUTH ===================
 let confirmationResult;
@@ -41,7 +68,6 @@ sendOtpBtn.addEventListener("click", () => {
   const phoneNumber = phoneInput.value;
   if (!phoneNumber) return alert("Enter your phone number");
 
-  // Invisible reCAPTCHA (required by Firebase)
   window.recaptchaVerifier = new firebase.auth.RecaptchaVerifier(sendOtpBtn, {
     size: 'invisible'
   });
@@ -98,7 +124,7 @@ saveProfileBtn.addEventListener("click", async () => {
     });
 
     alert("Profile saved! 🎉");
-    // Here you can redirect to the main chat screen in the next phase
+    // Redirect to main chat screen here in next phase
   };
   reader.readAsDataURL(file);
 });
