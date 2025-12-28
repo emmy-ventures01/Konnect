@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konnect - Profile</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
+</head>
+<body class="blue-bg">
+
+  <div class="centered">
+    <h2>Set up your profile</h2>
+    <input type="text" id="username" placeholder="Enter username">
+    <input type="file" id="profile-pic" accept="image/*">
+    <button id="save-profile">Save Profile</button>
+  </div>
+
+  <script src="profile.js"></script>
+</body>
+</html>
