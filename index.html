@@ -5,49 +5,20 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Konnect</title>
   <link rel="stylesheet" href="style.css">
-  <!-- Firebase SDKs -->
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
-  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore-compat.js"></script>
 </head>
-<body>
+<body class="splash">
 
-  <!-- ========================= WELCOME / SPLASH SCREEN ========================= -->
-  <div id="welcome-screen" class="screen active">
+  <div class="centered">
     <img src="https://i.postimg.cc/8kWxrg47/Sleek-Gradient-Blue-Konnect-Logo.png" alt="Konnect Logo" class="logo">
     <h1>Konnect</h1>
     <p class="tagline">Developed by EmmyVentures</p>
   </div>
 
-  <!-- ========================= ONBOARDING / FIRST-TIME INSTRUCTIONS ========================= -->
-  <div id="onboarding-screen" class="screen">
-    <h2>Welcome to Konnect!</h2>
-    <p>We’ll send you an OTP to verify your phone number.</p>
-    <p>One number per account.</p>
-    <p>By continuing, you accept our Terms of Service.</p>
-    <button id="continue-to-phone">Continue</button>
-  </div>
-
-  <!-- ========================= PHONE LOGIN SCREEN ========================= -->
-  <div id="phone-screen" class="screen">
-    <h2>Enter your phone number</h2>
-    <input type="text" id="phone-number" placeholder="+2348012345678">
-    <button id="send-otp">Send OTP</button>
-    
-    <div id="otp-section" class="hidden">
-      <input type="text" id="otp-code" placeholder="Enter OTP">
-      <button id="verify-otp">Verify OTP</button>
-    </div>
-  </div>
-
-  <!-- ========================= PROFILE SETUP SCREEN ========================= -->
-  <div id="profile-screen" class="screen">
-    <h2>Set up your profile</h2>
-    <input type="text" id="username" placeholder="Enter username">
-    <input type="file" id="profile-pic" accept="image/*">
-    <button id="save-profile">Save Profile</button>
-  </div>
-
-  <script src="app.js"></script>
+  <script>
+    // After 2 seconds, go to welcome page
+    setTimeout(() => {
+      window.location.href = "welcome.html";
+    }, 2000);
+  </script>
 </body>
-    </html>
+</html>
