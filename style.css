@@ -1,73 +1,38 @@
-
-/* ===== GLOBAL STYLING ===== */
 body {
   margin: 0;
   font-family: Arial, sans-serif;
-  background-color: #ffffff;
-  color: #333;
+  color: #fff;
 }
 
-/* Screens setup */
-.screen {
-  display: none;
-  opacity: 0;
-  height: 100vh;
-  width: 100vw;
-  text-align: center;
-  padding: 20px;
-  box-sizing: border-box;
-  transition: opacity 0.5s ease;
-}
-
-.screen.active {
-  display: block;
-  opacity: 1;
-}
-
-/* ===== WELCOME SCREEN ===== */
-#welcome-screen {
+.blue-bg {
+  background-color: #007BFF;
   display: flex;
-  flex-direction: column;
   justify-content: center;
   align-items: center;
+  height: 100vh;
+  text-align: center;
+}
+
+.splash {
   background-color: #ffffff;
-}
-
-.logo {
-  width: 150px;
-  height: 150px;
-  margin-bottom: 20px;
-}
-
-h1 {
   color: #007BFF;
-  font-size: 36px;
-  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  text-align: center;
 }
 
-.tagline {
-  color: #555;
-  font-size: 16px;
-  margin-top: 10px;
+.centered {
+  max-width: 90%;
 }
 
-/* ===== ONBOARDING SCREEN ===== */
-#onboarding-screen h2 {
-  color: #007BFF;
-  margin-bottom: 15px;
+h1, h2 {
+  margin: 10px 0;
 }
 
-#onboarding-screen p {
-  font-size: 16px;
+p {
   margin: 8px 0;
-  color: #555;
-}
-
-/* ===== PHONE LOGIN & PROFILE SETUP ===== */
-#phone-screen h2,
-#profile-screen h2 {
-  color: #007BFF;
-  margin-bottom: 20px;
 }
 
 input[type="text"],
@@ -75,27 +40,24 @@ input[type="file"] {
   width: 80%;
   padding: 10px;
   margin: 10px 0;
-  font-size: 16px;
-  border: 1px solid #ccc;
   border-radius: 8px;
+  border: none;
 }
 
 button {
   padding: 12px 20px;
-  background-color: #007BFF;
-  color: white;
   border: none;
   border-radius: 8px;
+  background-color: #0056b3;
+  color: white;
   font-size: 16px;
   cursor: pointer;
-  margin-top: 10px;
 }
 
 button:hover {
-  background-color: #0056b3;
+  background-color: #003f7f;
 }
 
-/* ===== HIDE ELEMENTS ===== */
 .hidden {
   display: none;
 }
