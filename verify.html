@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konnect - Verify</title>
+  <link rel="stylesheet" href="style.css">
+  <!-- Firebase SDK -->
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/9.23.0/firebase-auth-compat.js"></script>
+</head>
+<body class="blue-bg">
+
+  <div class="centered">
+    <h2>Enter your phone number</h2>
+    <input type="text" id="phone-number" placeholder="+2348012345678">
+    <button id="send-otp">Send OTP</button>
+
+    <div id="otp-section" class="hidden">
+      <input type="text" id="otp-code" placeholder="Enter OTP">
+      <button id="verify-otp">Verify OTP</button>
+    </div>
+  </div>
+
+  <script src="verify.js"></script>
+</body>
+</html>
